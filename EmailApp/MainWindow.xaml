@@ -1,0 +1,42 @@
+﻿<Window x:Class="EmailApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmailApp"
+        mc:Ignorable="d"
+        Title="Nadaj Przesyłkę, Łukasz Stępien" Height="350" Width="600">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel HorizontalAlignment="Left">
+                <GroupBox VerticalAlignment="Top" HorizontalAlignment="Left" Header="Rodzaj Przesyłki" Width="200" Height="120" Margin="15, 15, 0, 0">
+                    <StackPanel Margin="10" Orientation="Vertical">
+                        <RadioButton IsChecked="True" x:Name="RadioPostcard" Margin="5">Pocztówka</RadioButton>
+                        <RadioButton x:Name="RadioLetter" Margin="5">List</RadioButton>
+                        <RadioButton x:Name="RadioPackage" Margin="5">Paczka</RadioButton>
+                    </StackPanel>
+                </GroupBox>
+                <Button Margin="15, 15, 0, 0" Width="200" Click="Button_Click">Sprawdz cenę</Button>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="Img" HorizontalAlignment="Left" Margin="15, 15, 0, 0" Width="100" Source="./img/pocztowka.png"></Image>
+                    <Label x:Name="Price" FontWeight="Bold" FontSize="16" Margin="15, 15, 0, 0">Cena 1zł</Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="Info" Margin="70, 15" Width="285" Orientation="Vertical" VerticalAlignment="Top">
+                <GroupBox Height="210" Header="Dane adresowe">
+                    <StackPanel x:Name="City">
+                        <Label Margin="5, 10, 0, 0">Ulica z numerem</Label>
+                        <TextBox></TextBox>
+                        <Label x:Name="ZipCode" Margin="5, 10, 0, 0">Kod pocztowy</Label>
+                        <TextBox x:Name="ZipCodeInput"></TextBox>
+                        <Label Margin="5, 10, 0, 0">Miasto</Label>
+                        <TextBox></TextBox>
+                    </StackPanel>
+                </GroupBox>
+                <Label x:Name="Errors"></Label>
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="Submit" Margin="-15, 20 ,0, 0" Width="550" Click="Submit_Click">Zatwierdż</Button>
+    </StackPanel>
+
+</Window>
